@@ -1,3 +1,8 @@
+--Below is a demonstration of
+---Creating databses, tables and indexes (clustered & non-clustered)
+---Inserting and updating data
+---Transactions, Common Table Expressions, Dynamic SQL, variables
+
 Use [master]
 Go
 
@@ -14,7 +19,6 @@ If OBJECT_ID('[TestDB].[dbo].[Applicant Data]') is null
 Create Table [Applicant Data] (
 [Application Date] date not null
 , [Applicant Name] varchar(25) not null
-, [Position] varchar(25) null
 , [Applicant Phone Number] varchar(15) null
 , Constraint [Prevent Duplicates And Store Date Descending] Primary Key ([Application Date] desc, [Applicant Name] asc))
 
@@ -38,8 +42,7 @@ Begin Tran
 
 	--Update Example
 	Update [Applicant Data]
-	Set [Position] = 'SQL BI Developer'
-	, [Applicant Phone Number] = '07481924931'
+	Set [Applicant Phone Number] = '07481924931'
 	Where [Applicant Name] = 'Christopher Johnstone'
 
 Commit;
