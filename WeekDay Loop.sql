@@ -1,6 +1,3 @@
-Use [Archive_Activity_Campaign_ACX4848_Household]
-Go
-
 SET DATEFIRST 1;
 
 DECLARE @StartDate DATE = '2020-01-01'
@@ -24,17 +21,3 @@ BEGIN
 END
 
 Select * From @Weekdays
-
---With FileSize AS (
---	SELECT
---		CASE WHEN DATEPART(dw, D.[EXTRACT_DT]) = 1 THEN D.[EXTRACT_DT] ELSE DATEADD(D, 1-DATEPART(dw, D.[EXTRACT_DT]), D.[EXTRACT_DT]) END [Week]
---		, COUNT(*) [Records]
---	FROM
---		[dbo].[Archive_Data] D
---	WHERE
---		D.[EXTRACT_DT] >= @StartDate
---	GROUP BY
---		CASE WHEN DATEPART(dw, D.[EXTRACT_DT]) = 1 THEN D.[EXTRACT_DT] ELSE DATEADD(D, 1-DATEPART(dw, D.[EXTRACT_DT]), D.[EXTRACT_DT]) END)
-
---Select *
---From FileSize
